@@ -4,7 +4,7 @@ import { useGeolocation } from "@/hooks/use-geolocation"
 import { AlertTriangle, RefreshCw, MapPin} from "lucide-react"
 import {Alert ,AlertDescription, AlertTitle} from "@/components/ui/alert"
 import { useForecastQuery, useReverseGeocodeQuery, useWeatherQuery } from "@/hooks/use-weather";
-import CurrentWeather from "@/components/CurrentWeather";
+import CurrentWeather from "@/components/currentWeather";
 import HourlyTemp from "@/components/hourlyTemp";
 import WeatherDetails from "@/components/weatherDetails";
 import WeatherForecast from "@/components/weatherForecast";

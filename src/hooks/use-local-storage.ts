@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { json } from "stream/consumers";
 
-export function useLocalStorage<T>(key:String,initialValue:T){
+export function useLocalStorage<T>(key:string,initialValue:T){
 const [storedValue,setStoredValue]=useState<T>(()=>{
 
     try{

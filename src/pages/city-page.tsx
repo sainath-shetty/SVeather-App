@@ -4,7 +4,7 @@ import { AlertTriangle, RefreshCw, MapPin} from "lucide-react"
 import {Alert ,AlertDescription, AlertTitle} from "@/components/ui/alert"
 import { Button } from "@/components/ui/button"
 import WeatherSkeleton from "@/components/loading-skeleton";
-import CurrentWeather from "@/components/CurrentWeather";
+import CurrentWeather from "@/components/currentWeather";
 import HourlyTemp from "@/components/hourlyTemp";
 import WeatherDetails from "@/components/weatherDetails";
 import WeatherForecast from "@/components/weatherForecast";
