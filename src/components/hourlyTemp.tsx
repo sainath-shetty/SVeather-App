@@ -2,7 +2,7 @@ import { ForecastData } from "@/api/types";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { ResponsiveContainer, XAxis, LineChart, Line, YAxis, Tooltip } from 'recharts';
 import { format } from 'date-fns';
-
+import { XAxisProps, YAxisProps } from 'recharts';
 interface HourlyTempProps {
   data: ForecastData;
 }
@@ -13,7 +13,9 @@ const HourlyTemp = ({ data }: HourlyTempProps) => {
     temp: Math.round(item.main.temp),
     feels_like: Math.round(item.main.feels_like),
   }));
-
+  
+  const TypedXAxis = XAxis as unknown as React.ComponentType<any>;
+  const TypedYAxis = YAxis as unknown as React.ComponentType<any>;
   return (
     <Card className="w-full">
       <CardHeader>
@@ -23,8 +25,18 @@ const HourlyTemp = ({ data }: HourlyTempProps) => {
             <ResponsiveContainer width={"100%"} height={"100%"}>
               <LineChart data={chartData}>
                 {/* Use the correct JSX for XAxis and YAxis */}
-                <XAxis dataKey="time" fontSize={10} tickLine={false} axisLine={false} />
-                <YAxis tickFormatter={(value: number) => `${value}`} fontSize={12} tickLine={false} axisLine={false} />
+                <TypedXAxis 
+  dataKey="time" 
+  fontSize={10}
+  tickLine={false}
+  axisLine={false}
+/>
+<TypedYAxis
+  tickFormatter={(value: number) => `${value}`}
+  fontSize={12}
+  tickLine={false}
+  axisLine={false}
+/>
                 <Tooltip
                   content={({ active, payload }) => {
                     if (active && payload && payload.length) {
